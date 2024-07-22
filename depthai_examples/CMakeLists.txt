@@ -12,7 +12,7 @@ if(POLICY CMP0057)
 endif()
 
 set(_opencv_version 4)
-find_package(OpenCV 4 QUIET COMPONENTS imgproc highgui)
+find_package(OpenCV 4.7.0 EXACT REQUIRED QUIET COMPONENTS imgproc highgui)
 if(NOT OpenCV_FOUND)
   set(_opencv_version 3)
   find_package(OpenCV 3 REQUIRED COMPONENTS imgproc highgui)

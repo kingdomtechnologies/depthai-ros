@@ -447,11 +447,13 @@ int main(int argc, char** argv) {
     std::vector<std::tuple<std::string, int, int>> irDrivers = device->getIrDrivers();
     if(!irDrivers.empty()) {
         if(enableDotProjector) {
-            device->setIrLaserDotProjectorBrightness(dotProjectormA);
+            //device->setIrLaserDotProjectorBrightness(dotProjectormA);
+            device->setIrLaserDotProjectorIntensity(dotProjectormA);
         }
 
         if(enableFloodLight) {
-            device->setIrFloodLightBrightness(floodLightmA);
+	    // device->setIrFloodLightBrightness(floodLightmA);
+	    device->setIrFloodLightIntensity(floodLightmA);
         }
     }
 

@@ -153,8 +153,10 @@ void Camera::parameterCB(parametersConfig& config, uint32_t /*level*/) {
     floodlightBrighness = config.camera_i_floodlight_brightness;
     laserDotBrightness = config.camera_i_laser_dot_brightness;
     if(camRunning && enableIR && !device->getIrDrivers().empty()) {
-        device->setIrFloodLightBrightness(floodlightBrighness);
-        device->setIrLaserDotProjectorBrightness(laserDotBrightness);
+	device->setIrFloodLightIntensity(floodlightBrighness);
+        //device->setIrFloodLightBrightness(floodlightBrighness);
+        device->setIrLaserDotProjectorIntensity(laserDotBrightness);
+	//device->setIrLaserDotProjectorBrightness(laserDotBrightness);
     }
     if(!daiNodes.empty()) {
         for(const auto& node : daiNodes) {
@@ -282,8 +284,10 @@ void Camera::startDevice() {
 
 void Camera::setIR() {
     if(camRunning && enableIR && !device->getIrDrivers().empty()) {
-        device->setIrFloodLightBrightness(floodlightBrighness);
-        device->setIrLaserDotProjectorBrightness(laserDotBrightness);
+        //device->setIrFloodLightBrightness(floodlightBrighness);
+        //device->setIrLaserDotProjectorBrightness(laserDotBrightness);
+	device->setIrFloodLightIntensity(floodlightBrighness);
+        device->setIrLaserDotProjectorIntensity(laserDotBrightness);
     }
 }
 
